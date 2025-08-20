@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+/* Tombol Dark Mode */
+.dark-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  margin-right: 2rem;
+  margin-top: 0.3rem;
+}
+
+
+
+body {
+  /* Latar belakang gelap + neon glow */
+  
+  color: rgb(253, 247, 247);
+  transition: background 0.5s ease-in-out, color 0.3s ease-in-out;
+  
+  background: radial-gradient(circle at 20% 20%, rgba(0, 255, 170, 0.25), transparent 40%),
+  radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.25), transparent 40%),
+  linear-gradient(135deg, #0a0a0f, #1a1a2e);
+}
+
+
+
+nav {
+  height: 4rem;
+  /* width: 60%; */
+  background: rgba(255, 255, 255, 0.23);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  /* margin: 20vw; */
+  margin-top: 20px;
+}
+
+/* ul {
+  position: absolute;
+  overflow: hidden;
+  right: 21rem;
+  padding: 18px;
+  list-style: none;
+} */
+
+/* li {
+  float: right;
+
+} */
+
+.nav-item a {
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-right: 1rem;
+  color: rgb(255, 255, 255);
+  padding: 0.3rem;
+}
+
+.nav-item a:hover {
+  text-decoration: none;
+  /* transition-delay: 1s; */
+  color: rgb(0, 255, 255);
+}
+
+.navbar #logo a:hover {
+  color: rgb(0, 255, 255);
+}
+
+.social-media {
+  float: left;
+  /* margin-left: 5px; */
+  background-color: #000000;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+
+.social-media a {
+  padding: 0 2px;
+  text-decoration: none;
+  color: rgb(255, 254, 254);
+}
+
+.social-media a:hover {
+  transform: scale(1.6);
+}
+
+.navbar #logo a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.navbar #logo a :hover {
+  color: aqua;
+}
+
+#hero .container-fluid {
+  padding: 4rem 0; 
+}
+
+
+
+#hero #hero-text {
+  /* text-align: center; */
+  padding-top: 5rem;;
+  font-size: 20px;
+  height: 450px;
+  /* background-color: #0a0a0f; */
+}
+
+#hero #hero-image {
+  /* height: 450px; */
+  height: 350px;
+  background-color: #817b7b;
+  border-radius: 200px;
+
+}
+
+/* Custom Card Styles */
+.custom-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(20, 20, 40, 0.85);
+  border: 1.5px solid #79D1C3;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(121, 209, 195, 0.25), 0 1.5px 8px 0 #79D1C3;
+  border-color: #00fff7;
+}
+
+.card-img-custom {
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(0.95) saturate(1.2);
+  border-bottom: 2px solid #79D1C3;
+}
+
+.custom-card .card-title {
+  color: #79D1C3;
+  letter-spacing: 1px;
+}
+
+.custom-card .btn-outline-info {
+  border-width: 2px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #79D1C3 0%, #00fff7 100%);
+  color: #181824;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.custom-card .btn-outline-info:hover {
+  background: #181824;
+  color: #79D1C3;
+  border: 2px solid #79D1C3;
+}
+
+/* About Section */
+.about-card {
+  background: rgba(20, 20, 40, 0.92);
+  border: 1.5px solid #79D1C3;
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(121, 209, 195, 0.10);
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.about-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(121, 209, 195, 0.18);
+  border-color: #00fff7;
+}
+
+.about-title {
+  color: #79D1C3;
+  letter-spacing: 1px;
+}
+
+.about-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.about-img {
+  border: 4px solid #79D1C3;
+  box-shadow: 0 4px 24px 0 rgba(121, 209, 195, 0.18);
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  background: #181824;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+}
+.about-img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.about-more {
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 767px) {
+  .card-img-custom {
+    height: 160px;
+  }
+  .about-img {
+    width: 180px;
+    height: 180px;
+  }
+  .about-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Footer Section */
+.footer-section {
+  background: rgba(20, 20, 40, 0.95);
+  border-top: 2px solid #79D1C3;
+  box-shadow: 0 -2px 24px 0 rgba(121, 209, 195, 0.10);
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.footer-icon {
+  color: #79D1C3;
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.footer-icon:last-child {
+  margin-right: 0;
+}
+
+.footer-icon:hover {
+  color: #00fff7;
+  transform: translateY(-3px) scale(1.15);
+}
+
+.section-title {
+  color: #79D1C3;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(121, 209, 195, 0.15);
+}
+
+/* Certificate Section */
+.certificate-section {
+  background: rgba(20, 20, 40, 0.92);
+  border-radius: 18px;
+  border: 1.5px solid #79D1C3;
+  box-shadow: 0 8px 32px 0 rgba(121, 209, 195, 0.10);
+  padding: 2rem 1rem;
+}
+
+.certificate-card {
+  background: rgba(10, 20, 40, 0.85);
+  border-radius: 14px;
+  border: 1.5px solid #79D1C3;
+  box-shadow: 0 4px 16px 0 rgba(121, 209, 195, 0.10);
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  color: #fff;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(121, 209, 195, 0.18);
+  border-color: #00fff7;
+}
+
+.certificate-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #79D1C3;
+  background: #181824;
+  box-shadow: 0 2px 12px 0 rgba(121, 209, 195, 0.10);
+}
+
+@media (max-width: 767px) {
+  .footer-section {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem 0;
+  }
+  .footer-logo {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .footer-icon {
+    margin: 0 0.4rem;
+  }
+  .certificate-section {
+    padding: 1.2rem 0.5rem;
+  }
+  .certificate-img {
+    width: 60px;
+    height: 60px;
+  }
+}

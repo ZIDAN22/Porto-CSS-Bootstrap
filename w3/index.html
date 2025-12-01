@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hyperspeed Background (Vanilla JS)</title>
+    <style>
+        /* layout penuh layar */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+        }
+
+        /* canvas menutupi seluruh layar */
+        canvas#hyperspeed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            z-index: 0;
+        }
+
+        /* contoh konten di atas background */
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 2rem;
+            pointer-events: auto;
+        }
+
+        /* overlay lembut untuk efek bloom/gradien */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 40, 180, 0.06), rgba(0, 120, 255, 0.06));
+            mix-blend-mode: screen;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="hyperspeed"></canvas>
+    <div class="overlay"></div>
+
+    <main class="content">
+        <h1>Contoh Hyperspeed Background (Vanilla JS)</h1>
+        <p>Ini contoh sederhana yang meniru efek warp/hyperspeed menggunakan canvas 2D.</p>
+    </main>
+
+    <script>
+        /* Hyperspeed canvas vanilla JS
+           - starCount: jumlah "star/line" yang bergerak
+           - speedMultiplier: atur kecepatan
+           - color palette: sesuaikan
+        */
+        (function () {
+            const canvas = document.getElementById('hyperspeed');
+            const ctx = canvas.getContext('2d');
+            let W, H, cx, cy, starCount = 200, stars = [], lastTime = 0;
+            const palette = [
+                'rgba(255,255,255,0.9)',
+                'rgba(130,200,255,0.9)',
+                'rgba(255,120,220,0.9)'
+            ];
+            const speedMultiplier = 1.6; // ubah untuk percepat/lambatkan
+
+            function resize() {
+                W = canvas.width = innerWidth * devicePixelRatio;
+                H = canvas.height = innerHeight * devicePixelRatio;
+                canvas.style.width = innerWidth + 'px';
+                canvas.style.height = innerHeight + 'px';
+                ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+                cx = innerWidth / 2;
+                cy = innerHeight / 2;
+            }
+            addEventListener('resize', resize, { passive: true });
+            resize();
+
+            function rand(min, max) { return Math.random() * (max - min) + min; }
+
+            // Star object: initial position in a plane, speed is based on z
+            function createStar() {
+                const angle = Math.random() * Math.PI * 2;
+                // radius starting near center
+                const r = rand(0, Math.max(innerWidth, innerHeight) / 2);
+                const z = rand(0.2, 1); // depth (0.2..1)
+                return {
+                    x: cx + Math.cos(angle) * r,
+                    y: cy + Math.sin(angle) * r,
+                    z: z,
+                    // preserve initial radial direction for stretch
+                    ax: Math.cos(angle),
+                    ay: Math.sin(angle),
+                    color: palette[Math.floor(Math.random() * palette.length)],
+                    lengthFactor: rand(0.6, 1.8)
+                };
+            }
+
+            for (let i = 0; i < starCount; i++) stars.push(createStar());
+
+            function updateAndDraw(dt) {
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+                // draw subtle vignette / center glow
+                const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(cx, cy));
+                g.addColorStop(0, 'rgba(255,255,255,0.02)');
+                g.addColorStop(1, 'rgba(0,0,0,0.2)');
+                ctx.fillStyle = g;
+                ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+                for (let s of stars) {
+                    // speed increases when z -> smaller => farther? We'll emulate acceleration outward
+                    s.z -= 0.002 * dt * speedMultiplier; // approach 0 (near)
+                    // when z is too small, reset star to back
+                    if (s.z <= 0.02) {
+                        Object.assign(s, createStar());
+                        s.z = 1;
+                        continue;
+                    }
+
+                    // project position: make star move away from center
+                    const k = (1 / s.z);
+                    const px = cx + (s.x - cx) * k;
+                    const py = cy + (s.y - cy) * k;
+
+                    // draw streak (line) following direction from center
+                    const prevK = (1 / (s.z + 0.02));
+                    const pxPrev = cx + (s.x - cx) * prevK;
+                    const pyPrev = cy + (s.y - cy) * prevK;
+
+                    const dx = px - pxPrev;
+                    const dy = py - pyPrev;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    const thickness = Math.min(6, 0.8 + (1 / s.z) * 0.8) * s.lengthFactor;
+                    ctx.lineWidth = thickness;
+                    ctx.lineCap = 'round';
+
+                    // gradient stroke for bloom-ish streak
+                    const grad = ctx.createLinearGradient(pxPrev, pyPrev, px, py);
+                    grad.addColorStop(0, 'rgba(255,255,255,0.0)');
+                    grad.addColorStop(0.6, s.color.replace(/0\.9\)/, '0.6)'));
+                    grad.addColorStop(1, s.color.replace(/0\.9\)/, '1)'));
+
+                    ctx.strokeStyle = grad;
+                    ctx.beginPath();
+                    ctx.moveTo(pxPrev, pyPrev);
+                    ctx.lineTo(px, py);
+                    ctx.stroke();
+
+                    // tiny bright head
+                    ctx.fillStyle = s.color;
+                    ctx.beginPath();
+                    ctx.arc(px, py, Math.max(0.4, (1 / s.z) * 0.6), 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function loop(ts) {
+                if (!lastTime) lastTime = ts;
+                const dt = Math.min(40, ts - lastTime); // clamp dt
+                updateAndDraw(dt);
+                lastTime = ts;
+                requestAnimationFrame(loop);
+            }
+            requestAnimationFrame(loop);
+
+            // optional: expose controls on window for debugging
+            window.hyperspeed = {
+                setCount(n) {
+                    starCount = n | 0;
+                    stars.length = 0;
+                    for (let i = 0; i < starCount; i++) stars.push(createStar());
+                },
+                setSpeed(m) {
+                    // m >0
+                    window.speedMultiplier = m;
+                }
+            };
+        })();
+    </script>
+</body>
+
+</html>

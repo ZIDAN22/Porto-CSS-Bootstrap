@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // hamburger.addEventListener('click', () => {
   //     b.classList.toggle('show');
   //   });
-  
 
   // Job title effect
   const roles = [" - UI/UX Design", " - Back End Developer", " - Wordpres Developer"];

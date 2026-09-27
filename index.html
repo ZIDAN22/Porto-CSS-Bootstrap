@@ -1,232 +1,327 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zidan Fadillah</title>
-    <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="Portfolio Zidan Fadillah - Web Developer, UI/UX Designer, and WordPress specialist.">
+    <title>Zidan Fadillah | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg " id="navbar">
-            <div class="container">
-                <div class="navbar-brand" id="logo">
-                    <a href="#" class="logo">Zidan Fadillah</a>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nav-wrap">
+                <a class="navbar-brand brand" href="#home">Zidan<span>Fadillah</span></a>
+
+                <div class="socials d-none d-md-flex" aria-label="social media">
+                    <a href="https://wa.me/08984930904" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/zdnfdllh_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/zdnfdllh_" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
 
-
-                <div class="social-media">
-                    <a class="fab fa-whatsapp" href="https://wa.me/08984930904"></a>
-                    <a class="fab fa-instagram" href="https://www.instagram.com/zdnfdllh_/"></a>
-                    <a class="fab fa-x-twitter" href="https://x.com/zdnfdllh_"></a>
-                </div>
-
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto p-2 rounded-3 text-center">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#hero">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Project</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Certificate">Certificate</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <button id="toggle-bright" class="dark-btn">🌙</button>
-                        </li> -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#youtube">Video</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                        <li class="nav-item nav-cta"><a class="nav-link btn-primary-soft" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            <!-- Tombol Dark Mode -->
         </nav>
     </header>
 
     <main>
-        <section class="align-items-center " id="hero">
-            <div class="d-flex container-fluid ">
-                <div class="row align-items-center ">
-                    <div class="col-md-6 " id="hero-text">
-                        <h1 class="display-5 fw-bold text-white mx-5">Hi, <span style="color: #79D1C3;">I'm Zidan
-                                Fadillah</span>
-                            <span id="job-title"> -Website Developer</span>
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-7 hero-copy reveal">
+                        <p class="eyebrow">Available for freelance and collaboration</p>
+                        <h1>
+                            Hi, I’m <span>Zidan Fadillah</span>
+                            <span class="role" id="job-title">AI Web Developer</span>
                         </h1>
-                        <p class="text-white mx-5">Creative Web Developer specializing in Back-end development,
-                            design, Wordpress
-                            customization, and UI/UX Design.
+                        <p class="lead">
+                            I build modern digital products with a focus on AI-powered web development, full-stack implementation,
+                            deployment workflows, and professional WordPress solutions designed to grow with your business.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="#about" class="btn btn-secondary">About Me</a>
+                        </div>
+
+                        <div class="hero-meta">
+                            <div>
+                                <strong>3+</strong>
+                                <span>Years of work</span>
+                            </div>
+                            <div>
+                                <strong>15+</strong>
+                                <span>Projects built</span>
+                            </div>
+                            <div>
+                                <strong>100%</strong>
+                                <span>Dedicated</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <img src="assets/img/batik-re.png" width="350" id="hero-image" alt="Zidan Fadillah">
+
+                    <div class="col-lg-5 hero-visual reveal">
+                        <div class="portrait-card">
+                            <div class="image-wrap">
+                                <img src="assets/img/batik-re.png" alt="Zidan Fadillah portrait">
+                            </div>
+                            <div class="floating-badge badge-top">
+                                <i class="fa-solid fa-location-dot"></i> Indonesia
+                            </div>
+                            <div class="floating-badge badge-bottom">
+                                <i class="fa-solid fa-code"></i> UI/UX + Web
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Portfolio Section Start -->
-        <section id="portfolio" class="py-5">
-            <div class="container ">
-                <!-- Title di atas card item -->
-                <h2 class="text-center fw-bold mb-5 section-title">My Project</h2>
+
+        <section class="services section-space" id="services">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>What I Do</p>
+                    <h2>Creative solutions built for real business needs</h2>
+                </div>
+
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card custom-card h-100 shadow">
-                            <img src="assets/img/port1.png" class="card-img-top card-img-custom" alt="Card Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold">Booking Salon Kecantikan</h5>
-                                <p class="card-text">
-                                    Aplikasi web untuk memudahkan pelanggan melakukan reservasi layanan salon secara
-                                    online, lengkap dengan fitur jadwal dan notifikasi.
-                                </p>
-                                <a href="#" class="btn btn-outline-info rounded-pill px-4">Lihat Detail</a>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-xl-3 reveal">
+                        <article class="info-card">
+                            <div class="icon-wrap"><i class="fa-solid fa-robot"></i></div>
+                            <h3>AI Web Developer</h3>
+                            <p>Building modern web experiences using AI-assisted workflows, efficient logic, and clean product thinking for digital growth.</p>
+                        </article>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card custom-card h-100 shadow">
-                            <img src="assets/img/porto2.png" class="card-img-top card-img-custom" alt="Card Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold">Pembayaran Pascabayar</h5>
-                                <p class="card-text">
-                                    Sistem pembayaran pascabayar yang aman dan praktis untuk berbagai layanan,
-                                    dilengkapi riwayat transaksi dan notifikasi tagihan.
-                                </p>
-                                <a href="#" class="btn btn-outline-info rounded-pill px-4">Lihat Detail</a>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-xl-3 reveal">
+                        <article class="info-card">
+                            <div class="icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h3>Full Stack</h3>
+                            <p>Creating complete product solutions from frontend interfaces to backend logic, database structure, and deployment-ready performance.</p>
+                        </article>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card custom-card h-100 shadow">
-                            <img src="assets/img/project5.png" class="card-img-top card-img-custom" alt="Card Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold">Inventory IT</h5>
-                                <p class="card-text">
-                                    Sistem manajemen inventaris perangkat dan aset IT berbasis web untuk melacak stok,
-                                    riwayat peminjaman, pemeliharaan, dan menghasilkan laporan secara real-time.
-                                </p>
-                                <a href="#" class="btn btn-outline-info rounded-pill px-4">Lihat Detail</a>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-xl-3 reveal">
+                        <article class="info-card">
+                            <div class="icon-wrap"><i class="fa-brands fa-wordpress"></i></div>
+                            <h3>WordPress</h3>
+                            <p>Customizing themes, plugins, and user experience for professional websites and business landing pages.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-3 reveal">
+                        <article class="info-card">
+                            <div class="icon-wrap"><i class="fa-solid fa-palette"></i></div>
+                            <h3>Graphic Design</h3>
+                            <p>Designing visual assets and creative concepts that support branding, promo content, and engaging marketing materials.</p>
+                        </article>
                     </div>
                 </div>
-                <!-- About Section Start -->
-                <section id="about" class="py-5">
-                    <div class="container">
-                        <div class="row align-items-center flex-md-row flex-column-reverse">
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <div class="about-card p-4 rounded-4 shadow-lg">
-                                    <h2 class="fw-bold mb-3 about-title">About Me</h2>
-                                    <p class="about-desc">
-                                        Halo! Saya <span class="fw-semibold" style="color:#79D1C3">Zidan
-                                            Fadillah</span>, seorang web developer yang berfokus pada pembuatan website
-                                        di sisi server. Saya suka belajar teknologi baru dan membagikan pengetahuan
-                                        melalui project-project kreatif.
-                                    </p>
-                                    <ul class="about-list list-unstyled mt-3">
-                                        <li><i class="fa-solid fa-code me-2" style="color:#79D1C3"></i>Back-end </li>
-                                        <li><i class="fa-solid fa-palette me-2" style="color:#79D1C3"></i>UI/UX Design
-                                        </li>
-                                        <li><i class="fa-solid fa-code me-2" style="color:#79D1C3"></i>WordPress
-                                            Development</li>
-                                    </ul>
-                                    <button id="about-more-btn"
-                                        class="btn btn-outline-info rounded-pill mt-4 px-4">Tampilkan Lebih
-                                        Banyak</button>
-                                    <div id="about-more" class="about-more mt-3" style="display:none;">
-                                        <p>
-                                            📩 Zidanfadillah006@gmail.com <br>
-                                            ☎️ +62-898-4930-904
-                                        </p>
-                                        <a href="mailto:zdnfdllh@gmail.com"
-                                            class="btn btn-info rounded-pill px-4 mt-2">Hubungi Saya</a>
-                                    </div>
-                                </div>
+            </div>
+        </section>
+
+        <section class="projects section-space" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>Selected Work</p>
+                    <h2>Recent projects and digital experiences</h2>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 reveal">
+                        <article class="project-card">
+                            <img src="assets/img/port1.png" alt="Booking Salon Kecantikan">
+                            <div class="project-content">
+                                <span class="tag">Booking System</span>
+                                <h3>Beauty Salon Booking</h3>
+                                <p>Online reservation website for salon services with scheduling and streamlined customer flow.</p>
+                                <a href="#contact">See details</a>
                             </div>
-                            <div class="col-md-6 text-center">
-                                <img src="assets/img/batik-re.png" alt="About Zidan"
-                                    class="about-img img-fluid rounded-circle shadow">
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 reveal">
+                        <article class="project-card">
+                            <img src="assets/img/porto2.png" alt="Pembayaran Pascabayar">
+                            <div class="project-content">
+                                <span class="tag">Billing</span>
+                                <h3>Postpaid Payment System</h3>
+                                <p>Functional payment platform with transaction history, billing flow, and efficient status tracking.</p>
+                                <a href="#contact">See details</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 reveal">
+                        <article class="project-card">
+                            <img src="assets/img/project5.png" alt="Inventory IT">
+                            <div class="project-content">
+                                <span class="tag">Management</span>
+                                <h3>IT Inventory</h3>
+                                <p>Inventory dashboard for asset management, stock monitoring, and streamlined operational reporting.</p>
+                                <a href="#contact">See details</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section-space" id="about">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal">
+                        <div class="about-card">
+                            <p class="eyebrow">About Me</p>
+                            <h2>A creator who blends web technology, design thinking, and digital storytelling.</h2>
+                            <p>
+                                Hello! I’m Zidan Fadillah, an AI web developer focused on building modern digital experiences from design concept to final deployment.
+                            </p>
+                            <p>
+                                I enjoy developing full-stack solutions that cover interface design, product logic, data flow, and launch-ready deployment, while also supporting creative work through graphic design and video editing.
+                            </p>
+
+                            <ul class="about-list">
+                                <li><i class="fa-solid fa-circle-check"></i> AI-powered web development</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Full stack product development</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Graphic design and video editing</li>
+                                <li><i class="fa-solid fa-circle-check"></i> WordPress customization and optimization</li>
+                            </ul>
+
+                            <button id="about-more-btn" class="btn btn-secondary mt-3">Show more</button>
+                            <div id="about-more" class="about-more" hidden>
+                                <p>
+                                    <strong>Email:</strong> zidanfadillah006@gmail.com<br>
+                                    <strong>Phone:</strong> +62 898 4930 904
+                                </p>
+                                <a href="mailto:zidanfadillah006@gmail.com" class="btn btn-primary">Contact me</a>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- About Section End -->
-                <!-- Kotak My Certificate -->
-                <div class="certificate-section mt-5" id="Certificate">
-                    <h3 class="fw-bold mb-4 text-center section-title">My Certificate</h3>
-                    <div class="row justify-content-center g-4">
-                        <div class="col-md-4">
-                            <div class="certificate-card p-4 text-center h-100">
-                                <img src="assets/img/mc.jpg" alt="Certificate 1" class="certificate-img mb-3">
-                                <h5 class="fw-semibold mb-2 text-white">Mikrotik Network Associate</h5>
-                                <p class="mb-1">Sertifikat resmi Mikrotik yang membuktikan kemampuan dalam instalasi,
-                                    konfigurasi, dan troubleshooting jaringan berbasis Mikrotik RouterOS.</p>
-                                <a href="#" class="btn btn-outline-info btn-sm rounded-pill mt-2">Lihat Sertifikat</a>
+
+                    <div class="col-lg-6 reveal">
+                        <div class="about-visual">
+                            <div class="profile-frame">
+                                <img src="assets/img/batik-bg.png" alt="Zidan portfolio preview">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="certificate-card p-4 text-center h-100">
-                                <img src="assets/img/it.jpg" alt="Certificate 2" class="certificate-img mb-3">
-                                <h5 class="fw-semibold mb-2 text-white">Software Development</h5>
-                                <p class="mb-1">Sertifikat penguasaan pengembangan perangkat lunak mulai dari analisis
-                                    kebutuhan, desain, implementasi, hingga pengujian aplikasi modern.</p>
-                                <a href="#" class="btn btn-outline-info btn-sm rounded-pill mt-2">Lihat Sertifikat</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="certificate-card p-4 text-center h-100">
-                                <img src="assets/img/wp.jpg" alt="Certificate 3" class="certificate-img mb-3">
-                                <h5 class="fw-semibold mb-2 text-white">WordPress Expert</h5>
-                                <p class="mb-1">Sertifikat keahlian WordPress untuk pembuatan, kustomisasi tema,
-                                    pengelolaan plugin, dan optimasi website profesional berbasis WordPress.</p>
-                                <a href="#" class="btn btn-outline-info btn-sm rounded-pill mt-2">Lihat Sertifikat</a>
+                            <div class="mini-stat">
+                                <span class="mini-number">100%</span>
+                                <span>creative focus</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Portfolio Section End -->
+
+        <section class="youtube section-space" id="youtube">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>Portfolio Video</p>
+                    <h2>Motion graphic showcase and promo reel</h2>
+                </div>
+
+                <div class="video-wrapper reveal">
+                    <iframe
+                        src="https://www.youtube.com/embed/3o8l0kCb_d0?si=BNaP1I4iYlb8rDZc"
+                        title="Zidan Fadillah motion graphic video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificates section-space" id="certificates">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>Achievements</p>
+                    <h2>Certificates and professional proof</h2>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-4 reveal">
+                        <article class="certificate-card">
+                            <img src="assets/img/mc.jpg" alt="Mikrotik Network Associate certificate">
+                            <div>
+                                <h3>Mikrotik Network Associate</h3>
+                                <p>Certified in installation, configuration, and network troubleshooting with Mikrotik RouterOS.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4 reveal">
+                        <article class="certificate-card">
+                            <img src="assets/img/it.jpg" alt="Software Development certificate">
+                            <div>
+                                <h3>Software Development</h3>
+                                <p>Demonstrates understanding of software development from planning to implementation and testing.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4 reveal">
+                        <article class="certificate-card">
+                            <img src="assets/img/wp.jpg" alt="WordPress expert certificate">
+                            <div>
+                                <h3>WordPress Expert</h3>
+                                <p>Focused on WordPress theme customization, plugin management, and professional website optimization.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section-space" id="contact">
+            <div class="container">
+                <div class="contact-box reveal">
+                    <div>
+                        <p class="eyebrow">Let’s work together</p>
+                        <h2>Need a modern website that looks great and works smoothly?</h2>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/08984930904" target="_blank" class="btn btn-primary">WhatsApp</a>
+                        <a href="mailto:zidanfadillah006@gmail.com" class="btn btn-secondary">Email Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="footer-section mt-5 pt-4 pb-2">
-        <div class="container">
-            <div class="row align-items-center text-center text-md-start">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <span class="footer-logo fw-bold text-light">Zidan Fadillah</span>
-                    <span class="ms-2 text-light">&copy; 2025 All Rights Reserved.</span>
-                </div>
-                <div class="col-md-6 text-md-end icon-footer">
-                    <a href="https://www.instagram.com/zdnfdllh_/" class="footer-icon me-3" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/08984930904" class="footer-icon me-3" target="_blank"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="https://mailto:Zidanfadillah006@gmail.com" class="footer-icon me-3" target="_blank"><i
-                            class="fas fa-envelope"></i></a>
-                    <a href="https://x.com/zdnfdllh_" class="footer-icon" target="_blank"><i
-                            class="fab fa-x-twitter"></i></a>
-                </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Zidan Fadillah. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/zdnfdllh_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/08984930904" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:zidanfadillah006@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://x.com/zdnfdllh_" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
-    crossorigin="anonymous"></script>
 
 </html>

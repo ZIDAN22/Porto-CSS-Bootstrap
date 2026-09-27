@@ -381,7 +381,7 @@ p {
   height: 100%;
   background: rgba(15, 25, 36, 0.9);
   border: 1px solid var(--line);
-  border-radius: 0;
+  border-radius: 18px;
   box-shadow: 0 16px 40px rgba(1, 10, 17, 0.32);
 }
 
@@ -424,6 +424,31 @@ p {
 
 .project-content {
   padding: 1.2rem 1.1rem 1.25rem;
+}
+
+.project-content h3 {
+  margin: 0.7rem 0 0.5rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+}
+
+.project-content p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.project-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(86, 214, 197, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(86, 214, 197, 0.25);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .custom-carousel-control {

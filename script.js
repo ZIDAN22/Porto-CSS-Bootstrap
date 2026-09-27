@@ -1,6 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
   const jobTitle = document.getElementById('job-title');
-  const roles = ['Web Developer', 'UI/UX Designer', 'WordPress Specialist', 'Backend Developer'];
+  const roles = ['AI Web Developer', 'Graphic Designer', 'Video Editor', 'WordPress Specialist'];
   let roleIndex = 0;
 
   if (jobTitle) {
